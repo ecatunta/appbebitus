@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        .is-fixed-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .content {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header fijo con buscador -->
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <strong>Mi Tienda</strong>
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Buscar productos...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container content">
+        <h1 class="title">Catálogo de Productos</h1>
+        <div class="columns is-multiline">
+            <!-- Aquí se muestran los productos -->
+            {% for producto in productos %}
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{ producto.imagen.url }}" alt="Imagen de {{ producto.nombre }}">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">{{ producto.nombre }}</p>
+                                <p class="subtitle is-6">${{ producto.precio }}</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            {{ producto.descripcion }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Mi Empresa</strong> por <a href="https://miempresa.com">Mi Empresa</a>. Todos los derechos reservados.
+            </p>
+            <p>
+                <a href="/politica-de-privacidad">Política de Privacidad</a> |
+                <a href="/terminos-y-condiciones">Términos y Condiciones</a> |
+                <a href="/contacto">Contacto</a>
+            </p>
+            <p>
+                <a href="https://www.facebook.com" class="icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com" class="icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" class="icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" class="icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- Bulma JavaScript (opcional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/js/bulma.min.js"></script>
+</body>
+</html>

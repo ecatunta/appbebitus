@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        body {
+            padding-top: 70px; /* Altura del navbar fijo */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Fijo con Bootstrap
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Mi Tienda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav> -->
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    
+          <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1 class="sitename">TIENDA CALIM</h1>
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="#hero" class="active">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Dropdown 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Dropdown 1</a></li>
+                      <li><a href="#">Deep Dropdown 2</a></li>
+                      <li><a href="#">Deep Dropdown 3</a></li>
+                      <li><a href="#">Deep Dropdown 4</a></li>
+                      <li><a href="#">Deep Dropdown 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Dropdown 2</a></li>
+                  <li><a href="#">Dropdown 3</a></li>
+                  <li><a href="#">Dropdown 4</a></li>
+                </ul>
+              </li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+          <a class="btn-getstarted" href="#about">Get Started</a>
+    
+        </div>
+      </header>
+
+  <!-- Contenido principal -->
+  <div class="container mt-4">
+    
+    <!--<h1 class="mb-4">Catálogo de Productos</h1>-->
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>PRODUCTOS</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="row">
+        <!-- Aquí se muestran los productos -->
+        {% for producto in productos %}
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <!-- Mostrar la primera imagen del producto si existe -->
+                {% if producto.imagenes.all %}
+                    <img src="{{ producto.imagenes.first.imagen_nombre.url }}" class="card-img-top" alt="Imagen de {{ producto.nombre }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.prod_marca }} Talla {{ producto.prod_talla }}</h5>
+                    <!--<p class="card-text">Talla: {{ producto.producto_talla }}</p>
+                    <p class="card-text">Precio de Jaba: ${{ producto.producto_jaba_precio }}</p>
+                    <p class="card-text">Precio por Paquete: ${{ producto.producto_paquete_precio }}</p>-->
+                   <!--- <p class="card-text">{{ producto.prod_descripcion }}</p>-->
+                    <!--<button class="btn btn-primary" data-toggle="modal" data-target="#productoModal" data-id="{{ producto.prod_id }}" id="btnver">Ver</button>-->
+                    <a href="{% url 'producto_detail' producto.pk %}" class="btn btn-primary">Ver</a>
+                </div>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    <!-- Footer profesional -->
+    <footer class="bg-dark text-white pt-4 pb-4 mt-5">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="col-md-3">
+                    <h5 class="text-uppercase">Mi Empresa</h5>
+                    <p>Desarrollamos soluciones de software a medida.</p>
+                </div>
+                <!-- Column 2 -->
+                <div class="col-md-3">
+                    <h5 class="text-uppercase">Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/politica-de-privacidad" class="text-white">Política de Privacidad</a></li>
+                        <li><a href="/terminos-y-condiciones" class="text-white">Términos y Condiciones</a></li>
+                        <li><a href="/contacto" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div class="col-md-3">
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <p>123 Calle Principal<br>Ciudad, Estado 12345<br>Correo: info@miempresa.com<br>Tel: (123) 456-7890</p>
+                </div>
+                <!-- Column 4 -->
+                <div class="col-md-3">
+                    <h5 class="text-uppercase">Síguenos</h5>
+                    <a href="https://www.facebook.com" class="text-white me-2">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.twitter.com" class="text-white me-2">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com" class="text-white me-2">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" class="text-white me-2">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3">
+            © 2023 Mi Empresa. Todos los derechos reservados.
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="productoModal" tabindex="-1" role="dialog" aria-labelledby="productoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="prod_marca"></p>
+                    <p id="prod_talla"></p>
+                    <p id="prod_peso_ini"></p>
+                    <p id="prod_peso_fin"></p>
+                    <p id="prod_tiempo_absorcion"></p>
+                    <p id="prod_jaba_paquetes"></p>
+                    <p id="prod_jaba_precio"></p>
+                    <p id="prod_paquete_unidad"></p>
+                    <p id="prod_paquete_precio"></p>
+                    <p id="prod_detalle"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('#productoModal').on('show.bs.modal', function (event) {            
+            var button = $(event.relatedTarget);
+            var id = button.data('id');
+            //alert ('id: '+id)
+            $.ajax({
+                url: '/producto/' + id + '/',
+                method: 'GET',
+                success: function(data) {
+                    $('#prod_marca').text('Marca: ' + data.prod_marca);
+                    $('#prod_talla').text('Talla: ' + data.prod_talla);
+                    $('#prod_peso_ini').text('Peso Inicial: ' + data.prod_peso_ini);
+                    $('#prod_peso_fin').text('Peso Final: ' + data.prod_peso_fin);
+                    $('#prod_tiempo_absorcion').text('Tiempo de Absorción: ' + data.prod_tiempo_absorcion);
+                    $('#prod_jaba_paquetes').text('Jaba Paquetes: ' + data.prod_jaba_paquetes);
+                    $('#prod_jaba_precio').text('Jaba Precio: ' + data.prod_jaba_precio);
+                    $('#prod_paquete_unidad').text('Paquete Unidad: ' + data.prod_paquete_unidad);
+                    $('#prod_paquete_precio').text('Paquete Precio: ' + data.prod_paquete_precio);
+                    $('#prod_detalle').text('Detalle: ' + data.prod_detalle);
+                },
+                error: function(error){
+                    console.log("Error en la solicitud Ajax: "+error)
+                }
+            });
+        });
+   
+    </script>
+</body>
+</html>

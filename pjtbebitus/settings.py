@@ -36,8 +36,8 @@ SECRET_KEY = 'django-insecure-!c+7dd=%xs!mhf-bgztvnr@retl*7m%k_nj2d9ih1csy^z^_h_
 DEBUG = True
 #DEBUG = False
 
-#ALLOWED_HOSTS = ['appbebitus.onrender.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'appbebitus.onrender.com']
+#ALLOWED_HOSTS = []
 
 # Application definition
 

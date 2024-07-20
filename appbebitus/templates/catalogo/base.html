@@ -1,38 +1,39 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>{% block title %}Mi Proyecto{% endblock %}</title>
-    
-    <!--<link rel="stylesheet" href="{% static 'css/all.min.css' %}">-->
-    
-    <link rel="icon" href="{% static 'images/favicon.ico' %}">
-    
-    
-    <!--<link rel="stylesheet" href="{% static 'css/styles.css' %}">-->
-    
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Mi Proyecto{% endblock %}</title>
 
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    
-    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet"> 
+  <link rel="icon" href="{% static 'images/favicon.ico' %}">
 
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mystyles.css' %}">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
-    <style>
-        body {
-            padding-top: 70px; /* Altura del navbar fijo */
-        }
-    </style>
+  <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <!--<link href="{% static 'aos/aos.css' %}" rel="stylesheet">-->
+  <link href="{% static 'glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'css/mystyles.css' %}" rel="stylesheet">
+
+
+  <style>
+    body {
+      /*  padding-top: 50px; /* Altura del navbar fijo */
+    }
+  </style>
 </head>
 
-<body>
+<body class="index-page" style="border: 0px solid red;">
 
-<!-- Header Fijo con Bootstrap 
+  <!-- Header Fijo con Bootstrap 
 <header> 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -61,25 +62,25 @@
     </nav>
 </header>
 -->
-<header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <header id="header" class="header d-flex align-items-center fixed-top" style="border: 0px solid blue;">
 
-      <a href="{% url 'lista_productos' %}" class="logo d-flex align-items-center me-auto">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        
+
         <h1 class="sitename"><i class="bi bi-cart4"></i> CALIM</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{% url 'home' %}" class="active">Inicio</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <!--<li><a href="#services">Servicios</a></li>-->
+          <!--<li><a href="#portfolio">Portfolio</a></li>-->
+          <!--<li><a href="#team">Team</a></li>-->
+          <li><a href="#pricing">Productos</a></li>
+          <!--<li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -95,28 +96,23 @@
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          </li>-->
+          <li><a href="#contact">Contacto</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
       <a class="btn-getstarted" href="#about">Get Started</a>
-
     </div>
   </header>
 
-
-
-
-<!-- Contenido de la página -->
-<!--<main role="main" class="container mt-5 pt-5">-->
-<main role="main" class=""></main>
+  <!-- Contenido de la página -->
+  <!--<main role="main" class="container mt-5 pt-5">-->
+  <main class="main" style="border: 0px solid black;">
     {% block content %}
     {% endblock %}
-</main>
+  </main>
 
-    <!-- Footer profesional 
+  <!-- Footer profesional 
     <footer class="bg-dark text-white pt-4 pb-4 mt-5">
         <div class="container text-center text-md-left">
             <div class="row">
@@ -161,10 +157,10 @@
             © 2023 Mi Empresa. Todos los derechos reservados.
         </div>
     </footer>-->
-    
-    <footer id="footer" class="footer">
 
-        <div class="footer-newsletter">
+  <footer id="footer" class="footer">
+
+    <!-- <div class="footer-newsletter">          
           <div class="container">
             <div class="row justify-content-center text-center">
               <div class="col-lg-6">
@@ -179,9 +175,9 @@
               </div>
             </div>
           </div>
-        </div>
-    
-        <div class="container footer-top">
+        </div> -->
+
+    <!--<div class="container footer-top">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
               <a href="index.html" class="d-flex align-items-center">
@@ -227,22 +223,51 @@
             </div>
     
           </div>
-        </div>
-    
-        <div class="container copyright text-center mt-4">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">Arsha</strong> <span>All Rights Reserved</span></p>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you've purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>    
-      </footer>
+        </div>-->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CALIM</strong> <span>Todos los derechos
+          Reservados</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact.
+            You can delete the links only if you've purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/ 
+            Purchase the pro version with working PHP/AJAX contact form: [buy-url]-->
+        Diseñado por <a href="https://bootstrapmade.com/">SISCAT</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--<footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Kelly</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        All the links in the footer should remain intact.
+         You can delete the links only if you purchased the pro version.
+         Licensing information: https://bootstrapmade.com/license/ 
+         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/ 
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>-->
+
+ <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+
+  <!--<script src="{% static 'aos/aos.js' %}"></script>    -->
+  <script src="{% static 'glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'swiper/swiper-bundle.min.js' %}"></script>
+
+  <!--<script src="{% static 'js/main.js' %}"></script>-->
+  <script src="{% static 'js/carusel.js' %}"></script>
 
 </body>
+
 </html>

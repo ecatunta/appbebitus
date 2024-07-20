@@ -1,36 +1,78 @@
-<!-- templates/catalogo/lista_productos.html -->
+{% extends 'catalogo/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h1 class="my-4">Catálogo de Productos</h1>
-        <div class="row">
-            {% for producto in productos %}
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ producto.nombre }}</h4>
-                        <h5>${{ producto.precio }}</h5>
-                        <p class="card-text">{{ producto.descripcion }}</p>
-                    </div>
-                </div>
-            </div>
+{% block title %}Productos{% endblock %}
+
+{% block content %}
+
+<!--<div id="breadcrumb" class="breadcrumb2">
+  <nav aria-label="breadcrum" style="border: 0px solid  yellow;">
+    <ul class="breadcrumb">
+      {% for breadcrumb in breadcrumbs %}      
+      {% if forloop.last %}
+      <li class="breadcrumb-item active" aria-current="page">{{ breadcrumb.name }}</li>
+      {% else %}
+      <li class="breadcrumb-item"><a href="{{ breadcrumb.url }}" style="font-weight:bold;">{{ breadcrumb.name }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</div>-->
+
+
+
+
+<!--<section id="hero" class="hero section dark-background">-->
+<!-- Pricing Section -->
+ 
+<section id="pricing" class="pricing section light-background">
+  
+  <div class="container container-breadcrumb">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ul class="breadcrumb">
+            {% for breadcrumb in breadcrumbs %}
+            {% if forloop.last %}
+            <li class="breadcrumb-item active" aria-current="page">{{ breadcrumb.name }}</li>
+            {% else %}
+            <li class="breadcrumb-item"><a href="{{ breadcrumb.url }}" style="font-weight:bold;">{{ breadcrumb.name }}</a></li>
+            {% endif %}
             {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Productos</h2>
+    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+      <!-- Aquí se muestran los productos -->
+      {% for producto in productos %}
+      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100" style="border: 0px solid red;">
+        <div class="pricing-item featured">
+          <h3>{{ producto.prod_marca }} Talla {{ producto.prod_talla }}</h3>
+          <h4><sup>Bs</sup>{{ producto.prod_paquete_precio }}<span> / paquete</span></h4>
+          <!-- Mostrar la primera imagen del producto si existe -->
+          {% if producto.imagenes.all %}
+          <img src="{{ producto.imagenes.first.imagen_nombre.url }}" class="card-img-top"
+            alt="Imagen de {{ producto.nombre }}">
+          {% endif %}
+          <br>
+          <br>
+          <a href="{% url 'producto_detail' producto.pk %}" class="buy-btn">Mas Detalles</a>
         </div>
+      </div><!-- End Pricing Item -->
+      {% endfor %}
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+  </div>
+
+</section><!-- /Pricing Section -->
+{% endblock %}

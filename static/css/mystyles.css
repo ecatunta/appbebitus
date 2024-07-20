@@ -302,3 +302,17 @@
     height: 700px; /* Ajusta la altura para dispositivos grandes */
   }
 }
+
+
+/* Ocultar controles del carrusel en dispositivos con pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}
+
+/* Ajustar la duración de la transición del carrusel */
+.carousel-item {
+  transition: transform 0.2s ease-in-out; /* Cambia 0.3s al tiempo que prefieras */
+}

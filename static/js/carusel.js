@@ -112,9 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalItems = $(carousel).find('.carousel-item').length;
 
     if (window.innerWidth < 768) { // Para dispositivos pequeños
+      // A la izquierda 
       if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
+        alert('izquierda > next')
         $(carousel).carousel('next');
+        //A la derecha
       } else if (touchEndX > touchStartX && currentIndex > 0) {
+        alert('derecha > prev')
         $(carousel).carousel('prev');
       }
     } else { // Para dispositivos grandes
@@ -129,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
       updateImageCounter();
       updateControls();
     }, 500); // Ajusta el tiempo si es necesario
-    
+
   }
 
   carousel.addEventListener('touchstart', function (event) {

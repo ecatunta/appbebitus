@@ -85,23 +85,16 @@ document.addEventListener('DOMContentLoaded', function () {
   let touchStartX = 0;
   let touchEndX = 0;
 
-  /*function handleSwipe() {
-    if (touchEndX < touchStartX) {
-      $(carousel).carousel('next');
-    }
-    if (touchEndX > touchStartX) {
-      $(carousel).carousel('prev');
-    }
-  }*/
-
   //La función handleSwipe detecta la dirección del deslizamiento (izquierda o derecha) y mueve el carrusel en consecuencia si los controles correspondientes no están deshabilitados.
   function handleSwipe() {
-    if (touchEndX < touchStartX) {
+    const currentIndex = $(carousel).find('.carousel-item.active').index();
+    const totalItems = $(carousel).find('.carousel-item').length;
+
+    if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
       if (!nextControl.classList.contains('disabled')) {
         $(carousel).carousel('next');
       }
-    }
-    if (touchEndX > touchStartX) {
+    } else if (touchEndX > touchStartX && currentIndex > 0) {
       if (!prevControl.classList.contains('disabled')) {
         $(carousel).carousel('prev');
       }
@@ -111,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
       updateControls();
     }, 500); // Ajusta el tiempo si es necesario
   }
-
 
   carousel.addEventListener('touchstart', function (event) {
     touchStartX = event.changedTouches[0].screenX;

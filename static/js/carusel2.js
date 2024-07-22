@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentIndex < totalItems - 1) {
           $(carousel).carousel('next');
         } else {
+          alert ('cancel')
           // Cancelar el evento de deslizamiento
           event.preventDefault();
           event.stopPropagation();
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
           $(carousel).carousel('prev');
         } else {
           // Cancelar el evento de deslizamiento
+          alert ('cancel')
           event.preventDefault();
           event.stopPropagation();
         }

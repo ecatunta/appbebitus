@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let touchEndX = 0;
 
   //La función handleSwipe detecta la dirección del deslizamiento (izquierda o derecha) y mueve el carrusel en consecuencia si los controles correspondientes no están deshabilitados.
-  
+
   /*function handleSwipe() {
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 500);
   }*/
 
-  
+
   function handleSwipe() {
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
@@ -114,14 +114,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth < 768) { // Para dispositivos pequeños
       // A la izquierda 
       if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
-        alert('izquierda > next')
+        alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems-1:' + totalItems - 1)
         $(carousel).carousel('next');
         //A la derecha
-      } else if (touchEndX > touchStartX && currentIndex > 0) {
-        alert('derecha > prev')
+      } else if (touchEndX > touchStartX && currentIndex > 0) {    
+        alert('derecha > prev - currentIndex:' + currentIndex)
         $(carousel).carousel('prev');
       }
     } else { // Para dispositivos grandes
+      //
       if (touchEndX < touchStartX && !nextControl.classList.contains('disabled')) {
         $(carousel).carousel('next');
       } else if (touchEndX > touchStartX && !prevControl.classList.contains('disabled')) {
@@ -129,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
       updateImageCounter();
       updateControls();
     }, 500); // Ajusta el tiempo si es necesario

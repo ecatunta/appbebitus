@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }*/
 
 
-  function handleSwipe() {
+  function handleSwipe(event) {  // Agregar event como parámetro
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
 
@@ -127,16 +127,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 500); // Ajusta el tiempo si es necesario
   }
 
+
   carousel.addEventListener('touchstart', function (event) {
     touchStartX = event.changedTouches[0].screenX;
   });
 
-  carousel.addEventListener('touchend', function (event) {
+
+  /*carousel.addEventListener('touchend', function (event) {
     touchEndX = event.changedTouches[0].screenX;
     handleSwipe();
+  });*/
+
+  carousel.addEventListener('touchend', function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe(event); // Pasar event a handleSwipe
   });
 
   $(carousel).carousel({
     interval: false // Establece el intervalo en false para desactivar el deslizamiento automático
   });
+  
 });

@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let touchStartX = 0;
   let touchEndX = 0;
 
-  function handleSwipe() {
+  /*function handleSwipe() {
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
 
@@ -75,6 +75,43 @@ document.addEventListener('DOMContentLoaded', function () {
         $(carousel).carousel('next');
       } else if (touchEndX > touchStartX && currentIndex > 0) {
         $(carousel).carousel('prev');
+      }
+    } else { // Para dispositivos grandes
+      if (touchEndX < touchStartX && !nextControl.classList.contains('disabled')) {
+        $(carousel).carousel('next');
+      } else if (touchEndX > touchStartX && !prevControl.classList.contains('disabled')) {
+        $(carousel).carousel('prev');
+      }
+    }
+
+    setTimeout(function () {
+      updateImageCounter();
+      updateControls();
+    }, 500); // Ajusta el tiempo si es necesario
+  }*/
+
+
+  function handleSwipe() {
+    const currentIndex = $(carousel).find('.carousel-item.active').index();
+    const totalItems = $(carousel).find('.carousel-item').length;
+
+    if (window.innerWidth < 768) { // Para dispositivos pequeños
+      if (touchEndX < touchStartX) { // Desplazamiento a la izquierda
+        if (currentIndex < totalItems - 1) {
+          $(carousel).carousel('next');
+        } else {
+          // Cancelar el evento de deslizamiento
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      } else if (touchEndX > touchStartX) { // Desplazamiento a la derecha
+        if (currentIndex > 0) {
+          $(carousel).carousel('prev');
+        } else {
+          // Cancelar el evento de deslizamiento
+          event.preventDefault();
+          event.stopPropagation();
+        }
       }
     } else { // Para dispositivos grandes
       if (touchEndX < touchStartX && !nextControl.classList.contains('disabled')) {

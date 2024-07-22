@@ -114,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth < 768) { // Para dispositivos pequeños
       // A la izquierda 
       if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
-        alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems-1:' + totalItems - 1)
+        alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems-1:' + (totalItems - 1))
         $(carousel).carousel('next');
         //A la derecha
-      } else if (touchEndX > touchStartX && currentIndex > 0) {    
+      } else if (touchEndX > touchStartX && currentIndex > 0) {
         alert('derecha > prev - currentIndex:' + currentIndex)
         $(carousel).carousel('prev');
       }

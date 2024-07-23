@@ -54,8 +54,8 @@
 
         <!-- Imagen principal -->
         <div class="info-wrap" style="position: relative; height: auto !important;">
-          <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel" data-interval="false">-->
-          <div id="productoCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">            
+          <div id="productoCarousel" class="carousel slide" data-ride="carousel">
+            <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel" data-interval="2000"> -->
             <div class="carousel-inner">
               {% for imagen in producto.imagenes.all %}
               <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -85,6 +85,7 @@
               <button class="btn btn-light"><i class="bi bi-hand-thumbs-up-fill"></i></button>
             </div>
           </div>
+
         </div>
         <!-- Fin imagen principal -->
 
@@ -128,12 +129,14 @@
         <div class="row align-items-center my-4 precio">
           <div class="col-6 col-md-6 text-center position-relative">
             <!--<span class="precio-paquete2 linea-paquete"><b>Bs{{ producto.prod_paquete_precio }}</b></span>-->
-            <span class="precio-paquete2 linea-paquete"><b><span style="font-size: 15px;">BOB</span> {{ producto.prod_paquete_precio }}</b></span>
+            <span class="precio-paquete2 linea-paquete"><b><span style="font-size: 15px;">BOB</span> {{
+                producto.prod_paquete_precio }}</b></span>
             <p class="precio-descripcion2 linea-descripcion-paquete">Precio por Paquete</p>
           </div>
           <div class="col-6 col-md-6 text-center position-relative">
             <!--<span class="precio-jaba2 linea-jaba"><b>Bs {{ producto.prod_jaba_precio }}</b></span>-->
-            <span class="precio-jaba2 linea-jaba"><b><span style="font-size: 15px;">BOB</span> {{ producto.prod_jaba_precio }}</b></span>
+            <span class="precio-jaba2 linea-jaba"><b><span style="font-size: 15px;">BOB</span> {{
+                producto.prod_jaba_precio }}</b></span>
             <p class="precio-descripcion2 linea-descripcion-jaba">Precio por Jaba</p>
           </div>
         </div>

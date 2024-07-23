@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }*/
 
 
-  function handleSwipe() {
+  /*function handleSwipe() {
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
 
@@ -134,6 +134,22 @@ document.addEventListener('DOMContentLoaded', function () {
       updateControls();
     }, 500); // Ajusta el tiempo si es necesario
 
+  }*/
+
+
+  function handleSwipe() {
+    const currentIndex = $(carousel).find('.carousel-item.active').index();
+    const totalItems = $(carousel).find('.carousel-item').length;
+
+    if (touchEndX < touchStartX) { // Desplazamiento a la izquierda
+      if (currentIndex < totalItems - 1) {
+        $(carousel).carousel('next');
+      }
+    } else if (touchEndX > touchStartX) { // Desplazamiento a la derecha
+      if (currentIndex > 0) {
+        $(carousel).carousel('prev');
+      }
+    }
   }
 
   carousel.addEventListener('touchstart', function (event) {

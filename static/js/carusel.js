@@ -117,11 +117,11 @@ document.addEventListener('DOMContentLoaded', function () {
       // A la izquierda 
       if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
         alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems-1:' + (totalItems - 1))
-        $(carousel).carousel('next');
+        //$(carousel).carousel('next');
         //A la derecha
       } else if (touchEndX > touchStartX && currentIndex > 0) {
         alert('derecha > prev - currentIndex:' + currentIndex)
-        $(carousel).carousel('prev');
+        //$(carousel).carousel('prev');
       }
     } else { // Para dispositivos grandes
       if (touchEndX < touchStartX && !nextControl.classList.contains('disabled')) {

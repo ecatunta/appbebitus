@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Desactiva el deslizamiento automático y táctil nativo de Bootstrap
   $(carousel).carousel({
-    interval: false,
-    wrap: false,
-    touch: false
+    //interval: false,
+    //wrap: false,
+    //touch: false
   });
 
 
@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //alert('handleSwipe')
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
+    const swipeDistance = touchEndX - touchStartX;
+    alert('touchEndX: ' + touchEndX + ' touchStartX:' + touchStartX + 'swipeDistance:' + swipeDistance)
 
     if (window.innerWidth < 768) { // Para dispositivos pequeños
       // A la izquierda 

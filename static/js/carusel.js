@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeBtn = document.querySelector('#closeFullScreen');
   const imageNumber = document.querySelector('#imageNumber');
   const totalImages = document.querySelector('#totalImages');
-
   const prevControl = document.querySelector('.carousel-control-prev');
   const nextControl = document.querySelector('.carousel-control-next');
 
+  // Inicializa el carrusel sin soporte táctil
+  $('#productoCarousel').carousel({
+    touch: false
+  });
 
   // Actualizar el contador de imágenes
   function updateImageCounter() {
@@ -110,18 +113,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   function handleSwipe() {
+    alert('handleSwipe')
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
 
     if (window.innerWidth < 768) { // Para dispositivos pequeños
       // A la izquierda 
       if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
-        alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems:' + (totalItems - 1))
-        //$(carousel).carousel('next');
+        //alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems:' + (totalItems - 1))
+        $(carousel).carousel('next');
         //A la derecha
       } else if (touchEndX > touchStartX && currentIndex > 0) {
-        alert('derecha > prev - currentIndex:' + currentIndex)
-        //$(carousel).carousel('prev');
+        //alert('derecha > prev - currentIndex:' + currentIndex)
+        $(carousel).carousel('prev');
       }
     } else { // Para dispositivos grandes
       if (touchEndX < touchStartX && !nextControl.classList.contains('disabled')) {
@@ -138,14 +142,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  /*carousel.addEventListener('touchstart', function (event) {
+  carousel.addEventListener('touchstart', function (event) {
     touchStartX = event.changedTouches[0].screenX;
   });
 
   carousel.addEventListener('touchend', function (event) {
     touchEndX = event.changedTouches[0].screenX;
     handleSwipe();
-  });*/
+  });
 
 
   // Desactivar el deslizamiento automático
@@ -155,5 +159,5 @@ document.addEventListener('DOMContentLoaded', function () {
   $(carousel).carousel({
     interval: false // Establece el intervalo en false para desactivar el deslizamiento automático
   });
-});
 
+});

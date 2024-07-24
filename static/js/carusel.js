@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $(carousel).carousel({
     interval: false,
     //wrap: false,
-    //touch: false
+    touch: false
   });
 
 

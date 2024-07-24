@@ -24,26 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     touch: false
   });
 
-  
-    // Desactiva el deslizamiento táctil nativo de Bootstrap
-    const disableTouch = function() {
-      const items = carousel.querySelectorAll('.carousel-item');
-      items.forEach(item => {
-        item.addEventListener('touchstart', function(e) {
-          e.stopPropagation();
-        });
-        item.addEventListener('touchmove', function(e) {
-          e.stopPropagation();
-        });
-        item.addEventListener('touchend', function(e) {
-          e.stopPropagation();
-        });
-      });
-    };
-    
-    disableTouch();
-
-
+      
   // Actualizar el contador de imágenes
   function updateImageCounter() {
     const currentIndex = $(carousel).find('.carousel-item.active').index() + 1;

@@ -100,17 +100,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
     const swipeDistance = touchEndX - touchStartX;
-    alert('touchEndX: ' + touchEndX + ' touchStartX:' + touchStartX + 'swipeDistance:' + swipeDistance)
+    //alert('touchEndX: ' + touchEndX + ' touchStartX:' + touchStartX + 'swipeDistance:' + swipeDistance)
+    // Define un umbral de distancia mínima para considerar un deslizamiento
+    const swipeThreshold = 100;
 
     if (window.innerWidth < 768) { // Para dispositivos pequeños
-      // A la izquierda 
-      if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
-        //alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems:' + (totalItems - 1))
-        $(carousel).carousel('next');
-        //A la derecha
-      } else if (touchEndX > touchStartX && currentIndex > 0) {
-        //alert('derecha > prev - currentIndex:' + currentIndex)
-        $(carousel).carousel('prev');
+      
+      if (Math.abs(swipeDistance) > swipeThreshold) {
+        // A la izquierda 
+        if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
+          //alert('izquierda > next - currentIndex:' + currentIndex + ' totalItems:' + (totalItems - 1))
+          $(carousel).carousel('next');
+          //A la derecha
+        } else if (touchEndX > touchStartX && currentIndex > 0) {
+          //alert('derecha > prev - currentIndex:' + currentIndex)
+          $(carousel).carousel('prev');
+        }
       }
     } else { // Para dispositivos grandes
       if (touchEndX < touchStartX && !nextControl.classList.contains('disabled')) {

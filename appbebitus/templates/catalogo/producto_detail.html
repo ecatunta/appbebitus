@@ -57,7 +57,8 @@
           <!-- Imagen principal -->
         <div class="info-wrap" style="position: relative; height: auto !important;">
           <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel">-->
-          <div id="productoCarousel" class="carousel slide" data-interval="false">
+          <!--<div id="productoCarousel" class="carousel slide" data-interval="false">-->
+          <div id="productoCarousel" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
             <div class="carousel-inner">
               {% for imagen in producto.imagenes.all %}
               <div class="carousel-item {% if forloop.first %}active{% endif %}">

@@ -14,17 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // Desactivar el deslizamiento automático
   $(carousel).carousel('dispose');
 
-  // Desactivar el deslizamiento automático
+  // Desactiva el deslizamiento automático y táctil nativo de Bootstrap
   $(carousel).carousel({
-    interval: false // Establece el intervalo en false para desactivar el deslizamiento automático
-  });
-
-  // Inicializa el carrusel sin soporte táctil
-  $('#productoCarousel').carousel({
+    interval: false,
+    wrap: false,
     touch: false
   });
 
-      
+
   // Actualizar el contador de imágenes
   function updateImageCounter() {
     const currentIndex = $(carousel).find('.carousel-item.active').index() + 1;

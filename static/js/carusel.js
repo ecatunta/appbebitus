@@ -138,14 +138,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  carousel.addEventListener('touchstart', function (event) {
+  /*carousel.addEventListener('touchstart', function (event) {
     touchStartX = event.changedTouches[0].screenX;
   });
 
   carousel.addEventListener('touchend', function (event) {
     touchEndX = event.changedTouches[0].screenX;
     handleSwipe();
-  });
+  });*/
 
 
   // Desactivar el deslizamiento automático

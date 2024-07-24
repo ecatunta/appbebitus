@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Desactivar el deslizamiento automático
-  //$(carousel).carousel('dispose');
+  $(carousel).carousel('dispose');
 
   // Desactivar el deslizamiento automático
   $(carousel).carousel({

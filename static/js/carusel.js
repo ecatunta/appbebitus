@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Desactiva el deslizamiento automático y táctil nativo de Bootstrap
   $(carousel).carousel({
-    //interval: false,
+    interval: false,
     //wrap: false,
     //touch: false
   });

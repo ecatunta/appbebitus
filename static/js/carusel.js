@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const prevControl = document.querySelector('.carousel-control-prev');
   const nextControl = document.querySelector('.carousel-control-next');
 
+
+  // Desactivar el deslizamiento automático
+  $(carousel).carousel('dispose');
+
+  // Desactivar el deslizamiento automático
+  $(carousel).carousel({
+    interval: false // Establece el intervalo en false para desactivar el deslizamiento automático
+  });
+
   // Inicializa el carrusel sin soporte táctil
   $('#productoCarousel').carousel({
     touch: false
@@ -22,11 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function updateControls() {
-
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
-
-    console.log('currentIndex:' + currentIndex + ' / totalItems: ' + totalItems)
+    //console.log('currentIndex:' + currentIndex + ' / totalItems: ' + totalItems)
 
     if (currentIndex === 0) {
       prevControl.classList.add('disabled');
@@ -90,30 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let touchStartX = 0;
   let touchEndX = 0;
 
-  //La función handleSwipe detecta la dirección del deslizamiento (izquierda o derecha) y mueve el carrusel en consecuencia si los controles correspondientes no están deshabilitados.
-
-  /*function handleSwipe() {
-    const currentIndex = $(carousel).find('.carousel-item.active').index();
-    const totalItems = $(carousel).find('.carousel-item').length;
-
-    if (touchEndX < touchStartX && currentIndex < totalItems - 1) {
-      if (!nextControl.classList.contains('disabled')) {
-        $(carousel).carousel('next');
-      }
-    } else if (touchEndX > touchStartX && currentIndex > 0) {
-      if (!prevControl.classList.contains('disabled')) {
-        $(carousel).carousel('prev');
-      }
-    }
-    setTimeout(function () {
-      updateImageCounter();
-      updateControls();
-    }, 500);
-  }*/
-
-
   function handleSwipe() {
-    alert('handleSwipe')
+    //alert('handleSwipe')
     const currentIndex = $(carousel).find('.carousel-item.active').index();
     const totalItems = $(carousel).find('.carousel-item').length;
 
@@ -152,12 +137,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // Desactivar el deslizamiento automático
-  $(carousel).carousel('dispose');
-
-  // Desactivar el deslizamiento automático
-  $(carousel).carousel({
-    interval: false // Establece el intervalo en false para desactivar el deslizamiento automático
-  });
 
 });

@@ -28,6 +28,9 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-4">
       <div class="col-lg-7">
+        <div class="product-header2">
+          <h1 style="color:#3d4d6a;">{{ producto.prod_marca }} Talla {{ producto.prod_talla }}</h1>
+        </div>
 
         <!--Imagen principal 1-->
         <!--<div class="info-wrap" style="height: auto !important;">
@@ -53,8 +56,8 @@
         <!--Fin imagen principal 1-->
 
         <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel" data-interval="2000"> -->
-        
-          <!-- Imagen principal -->
+
+        <!-- Imagen principal -->
         <div class="info-wrap" style="position: relative; height: auto !important;">
           <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel">-->
           <!--<div id="productoCarousel" class="carousel slide" data-interval="false">-->
@@ -124,24 +127,25 @@
       </div>
 
       <div class="col-lg-5">
-
-        <div class="product-header2">
-          <h1 style="color: black;">{{ producto.prod_marca }} Talla {{ producto.prod_talla }}</h1>
-        </div>
-
-        <div class="row align-items-center my-4 precio">
-          <div class="col-6 col-md-6">            
-            <span class="precio-paquete2 linea-paquete2" style="padding: 0;border-bottom: 0;">
-              <b><span style="font-size: 15px;">BOB</span> {{ producto.prod_paquete_precio }}</b>
-            </span>            
-            <p style="color:#797676; font-size: 14px; margin-top:-2px;">Precio por paquete</p>
+        <div class="row align-items-center my-4 precio2">
+          <div class="col-6 col-md-6">
+            <span class="" style="padding: 0;border-bottom: 0;">
+              <b>
+                <span style="font-size: 15px;">BOB</span>
+                <span style="font-size: 40px;">{{ producto.prod_paquete_precio }}</span>
+              </b>
+            </span>
+            <p style="color:#797676; font-size: 14px;">Precio por paquete</p>
           </div>
 
-          <div class="col-6 col-md-6 ">            
-            <span class="precio-jaba2 linea-jaba2" style="padding:0; border-bottom:0;">
-              <b><span style="font-size: 15px;">BOB</span> {{producto.prod_jaba_precio }}</b>
-            </span>            
-            <p style="color:#797676; font-size: 14px; margin-top:-2px;">Precio por jaba</p>
+          <div class="col-6 col-md-6 ">
+            <span class="" style="padding:0; border-bottom:0;">
+              <b>
+                <span style="font-size: 15px;">BOB</span>
+                <span style="font-size: 40px;">{{producto.prod_jaba_precio }}</span>
+              </b>
+            </span>
+            <p style="color:#797676; font-size: 14px;">Precio por jaba</p>
           </div>
         </div>
 

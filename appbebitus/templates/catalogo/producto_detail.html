@@ -28,14 +28,15 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-4">
       <div class="col-lg-7">
-        <div class="product-header2">
+
+        <!--<div class="product-header2">
           <h1 style="color:#3d4d6a; font-size: 20px;">{{ producto.prod_marca }} Talla {{ producto.prod_talla }}</h1>
-        </div>
+        </div>-->
 
 
         <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel" data-interval="2000"> -->
         <!-- Imagen principal -->
-        <div class="info-wrap" style="position: relative; height: auto !important;">
+        <div class="info-wrap" style="position: relative; height: auto !important; margin-top: -20px;">
           <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel">-->
           <!--<div id="productoCarousel" class="carousel slide" data-interval="false">-->
           <div id="productoCarousel" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
@@ -73,7 +74,10 @@
         <div class="row">
           <div class="col-md-12">
             <div class="product-description2" style="margin-top:10px;">
-              <span style="color:#525050; font-size: 14px;">{{ producto.prod_descripcion }}</span>
+              <span style="color: white; background-color: #8610aa; padding: 5px; border-radius: 5px;">{{ producto.prod_marca }} </span>
+              &nbsp;
+              <span style="color: white; background-color: #454546; padding: 5px; border-radius: 5px;">Talla {{ producto.prod_talla }}</span>
+              <p style="color:#525050; padding: 5px;">{{ producto.prod_descripcion }}</p>
             </div>
           </div>
         </div>
@@ -111,44 +115,45 @@
       </div>
 
       <div class="col-lg-5">
-        <div class="row align-items-center my-4 precio2">
-          <div class="col-6 col-md-6">
-            <span class="" style="padding: 0;border-bottom: 0;">
-              <b>
-                <span style="font-size: 15px;">BOB</span>
-                <span style="font-size: 40px;">{{ producto.prod_paquete_precio }}</span>
-              </b>
-            </span>
-            <p style="color:#797676; font-size: 14px;">Precio por paquete</p>
+
+        <div class="container" style="background-color: #fff; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <div class="row my-4">
+            <div class="col-6 col-md-6">
+              <span>
+                <b>
+                  <span style="font-size: 15px;">BOB</span>
+                  <span style="font-size: 40px;">{{ producto.prod_paquete_precio }}</span>
+                </b>
+              </span>
+              <p style="color:#797676; font-size: 14px;">Precio por paquete</p>
+            </div>
+
+            <div class="col-6 col-md-6 ">
+              <span class="" style="padding:0; border-bottom:0;">
+                <b>
+                  <span style="font-size: 15px;">BOB</span>
+                  <span style="font-size: 40px;">{{producto.prod_jaba_precio }}</span>
+                </b>
+              </span>
+              <p style="color:#797676; font-size: 14px;">Precio por jaba</p>
+            </div>
           </div>
 
-          <div class="col-6 col-md-6 ">
-            <span class="" style="padding:0; border-bottom:0;">
-              <b>
-                <span style="font-size: 15px;">BOB</span>
-                <span style="font-size: 40px;">{{producto.prod_jaba_precio }}</span>
-              </b>
-            </span>
-            <p style="color:#797676; font-size: 14px;">Precio por jaba</p>
+          <div class="row my-4">
+            <div class="col-6 col-md-4 rating2 d-flex align-items-center">
+              <span class="text-warning">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </span>
+            </div>
+            <div class="col-6 col-md-8 d-flex justify-content-end align-items-center stock2">
+              <span><b>Stock:</b> Disponible</span>
+            </div>
           </div>
         </div>
-
-        <div class="row align-items-center my-4">
-          <div class="col-6 col-md-4 rating2 d-flex align-items-center">
-            <span class="text-warning">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </span>
-          </div>
-
-          <div class="col-6 col-md-8 d-flex justify-content-end align-items-center stock2">
-            <span><b>Stock:</b> 12344 items</span>
-          </div>
-        </div>
-
         <hr>
 
         <div class="container my-section">

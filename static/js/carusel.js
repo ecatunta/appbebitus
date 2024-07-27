@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const swipeDistance = touchEndX - touchStartX;
     //alert('touchEndX: ' + touchEndX + ' touchStartX:' + touchStartX + 'swipeDistance:' + swipeDistance)
     // Define un umbral de distancia mínima para considerar un deslizamiento
-    const swipeThreshold = 100;
+    const swipeThreshold = 70;
 
     if (window.innerWidth < 768) { // Para dispositivos pequeños      
       if (Math.abs(swipeDistance) > swipeThreshold) {

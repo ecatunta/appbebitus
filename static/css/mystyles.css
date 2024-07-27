@@ -39,6 +39,38 @@
   }
 }
 
+/* css inicio*/
+.container-calim{ 
+  border: 0px solid green; 
+  margin-top: 30px;
+}
+
+.container-calim ul{  
+  margin-bottom: 0px; 
+  padding: 0px;
+}
+
+@media (max-width: 1024px) {
+  .container-calim {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-calim{
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-calim {
+    margin-top: 6px;
+  }
+}
+
+/* css fin*/
+
+
 .precio{
   border: 0px solid green;
   background: white;
@@ -68,13 +100,14 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }*/
 
-.my-section{
-  margin-top: 10px;
-  margin-bottom: 20px;  
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.my-section{ 
+  /*background-color: blue;*/
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 0px;
+  /*box-shadow: 0 4px 8px rgba(0,0,0,0.1);  */
 }
 
 .my-section .row:nth-child(odd) {
@@ -83,11 +116,11 @@
 .my-section .row:nth-child(even) {
   background-color: #ffffff;
 }
-.my-section .row{
+/*.my-section .row{
   padding-left: 1px;
   padding-top: 9px;
   padding-bottom: 9px;
-}
+}*/
 .my-section h4{
   color: black;
 }

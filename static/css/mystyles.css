@@ -1,24 +1,24 @@
 .header {
-  --background-color: #3d4d6a!important;
+  --background-color: #3d4d6a !important;
 }
 
-.section{
+.section {
   border: 0px solid green !important;
 }
 
-.container-breadcrumb{
+.container-breadcrumb {
   margin-top: 25px;
   margin-bottom: 10px;
-  border: 0px solid red;   
+  border: 0px solid red;
   /*background-color: #ffffff;*/
   /*background-color: #f5f6f8;*/
 }
 
-.container-breadcrumb ul{
+.container-breadcrumb ul {
   margin-bottom: 0px;
-  border: 0px solid  yellow; 
+  border: 0px solid yellow;
   padding-top: 10px;
-  padding-bottom: 10px;  
+  padding-bottom: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 768px) {
-  .container-breadcrumb{
+  .container-breadcrumb {
     margin-top: 4px;
   }
 }
@@ -40,13 +40,13 @@
 }
 
 /* css inicio*/
-.container-calim{ 
-  border: 0px solid green; 
+.container-calim {
+  border: 0px solid green;
   margin-top: 30px;
 }
 
-.container-calim ul{  
-  margin-bottom: 0px; 
+.container-calim ul {
+  margin-bottom: 0px;
   padding: 0px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 @media (max-width: 768px) {
-  .container-calim{
+  .container-calim {
     margin-top: 6px;
   }
 }
@@ -71,27 +71,27 @@
 /* css fin*/
 
 
-.precio{
+.precio {
   border: 0px solid green;
   background: white;
   border-radius: 0px;
 }
 
 .buy-btn2 {
-    color: var(--accent-color);
-    display: inline-block;
-    padding: 8px 35px 10px 35px;
-    border-radius: 50px;
-    transition: none;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: var(--heading-font);
-    transition: 0.3s;
-    border: 1px solid var(--accent-color);
-  }
+  color: var(--accent-color);
+  display: inline-block;
+  padding: 8px 35px 10px 35px;
+  border-radius: 50px;
+  transition: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+  border: 1px solid var(--accent-color);
+}
 
 
- /* .php-email-form2 {
+/* .php-email-form2 {
     background-color: var(--surface-color);
     height: 100%;
     padding: 30px;
@@ -100,7 +100,7 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }*/
 
-.my-section{ 
+.my-section {
   /*background-color: blue;*/
   padding-left: 12px;
   padding-right: 12px;
@@ -113,15 +113,17 @@
 .my-section .row:nth-child(odd) {
   background-color: #f2f2f2;
 }
+
 .my-section .row:nth-child(even) {
   background-color: #ffffff;
 }
+
 /*.my-section .row{
   padding-left: 1px;
   padding-top: 9px;
   padding-bottom: 9px;
 }*/
-.my-section h4{
+.my-section h4 {
   color: black;
 }
 
@@ -129,7 +131,7 @@
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
 }
 
 /*
@@ -205,29 +207,33 @@
   transform: translateY(-50%);
 }*/
 
-.precio-paquete2, .precio-jaba2 {
+.precio-paquete2,
+.precio-jaba2 {
   font-size: 1.7em;
   padding: 7px 7px 1px 7px;
   border-radius: 1px;
   position: relative;
   display: inline-block;
 }
+
 .precio-paquete2 {
-/*  color: #8C1408;*/
+  /*  color: #8C1408;*/
 
   /*color: #3d4d6a;*/
   color: black;
   /*background-color: #FCB8B1;*/
   background-color: #Fff;
-  border-bottom: 2px solid #757272 ;
+  border-bottom: 2px solid #757272;
 }
+
 .precio-jaba2 {
   /*color: #494947;*/
   color: black;
   /*background-color: #A0F1F0;*/
   background-color: #Fff;
-  border-bottom: 2px solid #757272 ;
+  border-bottom: 2px solid #757272;
 }
+
 .precio-descripcion2 {
   padding: 8px;
   border-radius: 5px;
@@ -244,18 +250,21 @@
   width: 2px;
   height: 20px;
   /*background-color: #FCB8B1; /* Color para la línea de paquete */
-  background-color: #757272; /* Color para la línea de paquete */
+  background-color: #757272;
+  /* Color para la línea de paquete */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 100%;
 }
+
 .linea-descripcion-paquete::before {
   content: '';
   width: 4px;
   height: 8px;
   /*background-color: #FCB8B1; /* Color para la línea de paquete */
-  background-color: #757272; /* Color para la línea de paquete */
+  background-color: #757272;
+  /* Color para la línea de paquete */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -267,18 +276,21 @@
   width: 2px;
   height: 20px;
   /*background-color: #A0F1F0;  Color para la línea de jaba */
-  background-color: #757272; /* Color para la línea de jaba */
+  background-color: #757272;
+  /* Color para la línea de jaba */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 100%;
 }
+
 .linea-descripcion-jaba::before {
   content: '';
   width: 4px;
   height: 8px;
   /*background-color: #A0F1F0; /* Color para la línea de jaba */
-  background-color: #757272; /* Color para la línea de jaba */
+  background-color: #757272;
+  /* Color para la línea de jaba */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -325,8 +337,10 @@
 
 /* Estilo base para todas las imágenes */
 .carousel-item img {
-  height: 700px; /* Define una altura fija */
-  object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+  height: 700px;
+  /* Define una altura fija */
+  object-fit: cover;
+  /* Asegura que la imagen se ajuste sin distorsionarse */
 }
 
 /* Para dispositivos pequeños (por ejemplo, teléfonos móviles) */
@@ -340,20 +354,23 @@
 /* Para dispositivos medianos (por ejemplo, tabletas) */
 @media (min-width: 577px) and (max-width: 768px) {
   .carousel-item img {
-    height: 400px; /* Ajusta la altura para dispositivos medianos */
+    height: 400px;
+    /* Ajusta la altura para dispositivos medianos */
   }
 }
 
 /* Para dispositivos grandes (por ejemplo, pantallas de escritorio) */
 @media (min-width: 769px) {
   .carousel-item img {
-    height: 700px; /* Ajusta la altura para dispositivos grandes */
+    height: 700px;
+    /* Ajusta la altura para dispositivos grandes */
   }
 }
 
 
 /* Ocultar controles del carrusel en dispositivos con pantallas pequeñas */
 @media (max-width: 768px) {
+
   .carousel-control-prev,
   .carousel-control-next {
     display: none;
@@ -362,7 +379,8 @@
 
 /* Ajustar la duración de la transición del carrusel */
 .carousel-item {
-  transition: transform 0.2s ease-in-out; /* Cambia 0.3s al tiempo que prefieras */
+  transition: transform 0.2s ease-in-out;
+  /* Cambia 0.3s al tiempo que prefieras */
 }
 
 
@@ -378,7 +396,7 @@
   z-index: 9999;
 }
 
-#fullScreenImage > div {
+#fullScreenImage>div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,6 +423,15 @@
 
 
 .breadcrumb-item + .breadcrumb-item::before {
-  content: ">";
-  /*color: red; /* Cambia el color si es necesario */
+  content: ">";  
 }
+
+
+/*.breadcrumb-item + .breadcrumb-item::before {
+  content: "\f415"; 
+  font-family: "Bootstrap Icons";
+  color: #000; 
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}*/
+

@@ -401,3 +401,10 @@
   font-size: 100px;
   cursor: pointer;
 }
+
+
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  /*color: red; /* Cambia el color si es necesario */
+}

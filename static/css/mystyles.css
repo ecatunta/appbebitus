@@ -332,7 +332,8 @@
 /* Para dispositivos pequeños (por ejemplo, teléfonos móviles) */
 @media (max-width: 576px) {
   .carousel-item img {
-    height: 400px; /* Ajusta la altura para dispositivos pequeños */
+    /*height: 400px; /* Ajusta la altura para dispositivos pequeños */
+    height: 380px;
   }
 }
 

@@ -1,12 +1,14 @@
 {% extends 'catalogo/base.html' %}
 
-{% block title %}Detalles del Producto{% endblock %}
+{% block title %}Detalles{% endblock %}
 
 {% block content %}
-
+<!-- Inicio Section -->
 <section class="pricing section light-background">
-
+  <!-- Inicio container -->
   <div class="container container-calim" data-aos="fade-up" data-aos-delay="100">
+    
+    <!-- Inicio fila 1 - breadcrumb -->
     <div class="row mb-1">
       <div class="col-12 py-0" style="border: 0px solid red; background-color: #fff; border-radius: 4px;">
         <nav aria-label="breadcrumb" style="border: 0px solid cyan;">
@@ -24,46 +26,28 @@
         </nav>
       </div>
     </div>
+    <!-- Fin fila 1 - breadcrumb -->
 
-    <!--<div class="row mb-1">
-      <div class="col-12 py-2" 
-      style="border: 0px solid red; background-color: #fff; border-radius: 4px; text-align: center;">
-        <h4 style="margin-bottom: 0px; font-size: 34px; text-transform: uppercase;">
-          <b>
-            {{ producto.prod_marca }}
-            Talla {{ producto.prod_talla }}
-          </b>
-        </h4>
-        <p style="color:#1a1919; margin-bottom: 0px;">
-          {{ producto.prod_descripcion }}
-        </p>
-      </div>
-    </div>-->
-
+    <!-- Inicio fila 2 - titulo del producto -->
     <div class="row mb-1" style="border: 0px solid rgb(21, 219, 104);">
-      <div class="col-12 py-3" 
-      style="border: 0px solid black; background-color: #f4f0ff; border-radius:2px; text-align: center; ">
-        <h2 style="margin-bottom: 0px; font-weight: 500!important; font-weight: 32px; color:inherit; font-family:'Montserrat', sans-serif">
+      <div class="col-12 py-3"
+        style="border: 0px solid black; background-color: #f4f0ff; border-radius:2px; text-align: center; ">
+        <h2
+          style="margin-bottom: 0px; font-weight: 500!important; font-weight: 32px; color:inherit; font-family:'Montserrat', sans-serif">
           Pañales {{ producto.prod_marca }}
           Talla {{ producto.prod_talla }}
         </h2>
       </div>
     </div>
+    <!-- Fin fila 2 - titulo del producto -->
 
+    <!-- Inicio fila 3 - carousel y detalle -->
     <div class="row mb-1">
+      <!-- Inicio columna 1 - carousel -->
       <div class="col-lg-7" style="border: 0px solid red;">
-        <!--<div class="product-header2">
-          <h1 style="color:#3d4d6a; font-size: 20px;">{{ producto.prod_marca }} Talla {{ producto.prod_talla }}</h1>
-        </div>-->
-
         <div class="row mb-1" style="border: 0px solid red;">
           <div class="col-12 p-4" style="background-color: #fff;">
             <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel" data-interval="2000"> -->
-            <!-- Imagen principal -->
-            <!--<div class="info-wrap2" style="position: relative; height: auto !important; border: 2px solid blue !important;">-->
-            <!--<div id="productoCarousel" class="carousel slide" data-ride="carousel">-->
-            <!--<div id="productoCarousel" class="carousel slide" data-interval="false">-->
-
             <div id="productoCarousel" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
               <div class="carousel-inner">
                 {% for imagen in producto.imagenes.all %}
@@ -81,51 +65,36 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
-
-
               <div class="image-counter"
                 style="position: absolute; bottom: 10px; left: 10px; color: #fff; font-size: 16px;">
                 <span id="imageNumber">1</span>/<span id="totalImages">{{ producto.imagenes.count }}</span>
               </div>
-
-
               <div class="action-icons" style="position: absolute; bottom: 10px; right: 10px;">
                 <button class="btn btn-light"><i class="bi bi-heart"></i></button>
                 <button class="btn btn-light"><i class="bi bi-hand-thumbs-up-fill"></i></button>
               </div>
             </div>
-
           </div>
         </div>
-
         <div id="fullScreenImage"
           style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999;">
           <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
             <img id="fullScreenImg" src="" style="max-height: 90%; max-width: 90%;">
           </div>
           <button id="closeFullScreen"
-            style="position: absolute; top: 20px; left: 20px; background: none; border: none; color: #fff; font-size:80px; cursor: pointer;">&times;</button>
+            style="position: absolute; top: 20px; left: 20px; background: none; border: none; color: #fff; font-size:80px; cursor: pointer;">&times;
+          </button>
         </div>
-
-        <!--<div class="row mb-1" style="border: 0px solid rgb(21, 219, 104);">
-          <div class="col-12 py-2" style="border: 0px solid black; background-color: #fff; border-radius:2px;">
-            <p style="margin-bottom: 0px;">
-              Pañales {{ producto.prod_marca }}
-              Talla {{ producto.prod_talla }}
-            </p>
-          </div>
-        </div>-->
-
       </div>
+      <!-- Fin columna 1 - carousel -->
 
-      <!--<div class="col-lg-1" style="border: 0px solid blue;"></div>-->
+      <!-- Inicio columna 2 - precio, calificacion y detalle -->
       <div class="col-lg-5" style="border: 0px solid black;">
-
-        <!--<div class="container" style="background-color: #fff; margin-top: -00px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border: 4px solid cyan;">-->
+        <!-- Inicio Fila 1 - precio -->
         <div class="row mb-0" style="border: 0px solid yellow; background-color: #fff;">
-          <div class="col-6 py-4" style="border: 0px solid red;">
-            <div style="background-color: #f5f6f8; border: 0px solid black; padding: 5px; text-align: center;">
+          
+          <div class="col-6 pt-5 pb-3 px-3" style="border: 0px solid red;">
+            <div style="background-color:#f5f6f8; border:0px solid black; padding-top:15px; padding-bottom:15px; text-align:center; border-radius: 5px;">
               <b>
                 <span style="font-size: 15px;">BOB</span>
                 <span style="font-size: 40px;">{{ producto.prod_paquete_precio }}</span>
@@ -134,8 +103,8 @@
             </div>
           </div>
 
-          <div class="col-6 py-4" style="border: 0px solid blue;">
-            <div style="background-color: #f5f6f8; border: 0px solid black; padding: 5px; text-align: center;">
+          <div class="col-6 pt-5 pb-3 px-3" style="border: 0px solid blue;">
+            <div style="background-color: #f5f6f8; border: 0px solid black; padding-top:15px; padding-bottom:15px; text-align: center;border-radius: 5px;">
               <b>
                 <span style="font-size: 15px;">BOB</span>
                 <span style="font-size: 40px;">{{producto.prod_jaba_precio }}</span>
@@ -143,8 +112,11 @@
               <p style="color:#797676; font-size: 14px; margin-bottom: 0px;">Precio por jaba</p>
             </div>
           </div>
-        </div>
 
+        </div>
+        <!-- Fin Fila 1 - precios -->
+
+        <!-- Inicio Fila 2 - calificacion -->
         <div class="row mb-1" style="border: 0px solid green; background-color: #fff;">
           <div class="col-6 col-md-4 rating2 d-flex align-items-center">
             <span class="text-warning">
@@ -159,20 +131,18 @@
             <span><b>Stock:</b> Disponible</span>
           </div>
         </div>
-        <!-- </div>-->
-        <!--<hr>-->
+        <!-- Fin Fila 2 - calificacion -->
 
+        <!-- Inicio Fila 3 - detalle de producto -->
         <div class="row">
           <div class="col-12"
             style="border: 0px solid red; background-color:white; box-shadow: 0 4px 8px rgba(0,0,0,0.1);  ">
             <div class="container2 my-section">
-
               <div class="row" style="border: 0px solid green; background-color: #fff;">
                 <div class="col-12 py-2" style="border: 0px solid blue;">
                   <h2 style="color: black; border:0px solid yellow;">Detalles</h2>
                 </div>
               </div>
-
               <div class="row align-items-center">
                 <div class="col-4 col-md-4 py-2">
                   <span>Color</span>
@@ -181,7 +151,6 @@
                   <span>{{ producto.prod_color }}</span>
                 </div>
               </div>
-
               <div class="row align-items-center">
                 <div class="col-4 col-md-4 py-2">
                   <span>Marca</span>
@@ -190,7 +159,6 @@
                   <span>{{ producto.prod_marca }}</span>
                 </div>
               </div>
-
               <div class="row align-items-center">
                 <div class="col-4 col-md-4 py-2">
                   <span>Talla</span>
@@ -199,7 +167,6 @@
                   <span>{{ producto.prod_talla }}</span>
                 </div>
               </div>
-
               <div class="row align-items-center">
                 <div class="col-4 col-md-4 py-2">
                   <span>Peso del/la Bebé</span>
@@ -248,7 +215,6 @@
                   <span>{{ producto.prod_paquete_medida }} cm</span>
                 </div>
               </div>
-
               <div class="row align-items-center">
                 <div class="col-4 col-md-4 py-2">
                   <span>Peso del paquete</span>
@@ -257,7 +223,6 @@
                   <span>{{ producto.prod_paquete_peso }} kg</span>
                 </div>
               </div>
-
               <div class="row align-items-center">
                 <div class="col-4 col-md-4 py-2">
                   <span>Descripción</span>
@@ -266,20 +231,24 @@
                   <span>{{ producto.prod_descripcion }}</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
+        <!-- Fin Fila 3 - detalle de producto -->
       </div>
+      <!-- Fin columna 2 - precio, calificacion y detalle -->
     </div>
+    <!-- Fin fila 3 - carousel y detalle -->
 
-    <div class="row mt-3">
-      <div class="col text-center">
+    <!-- Inicio fila 4 - botones -->
+    <div class="row mb-0">
+      <div class="col-12 py-3 text-center">
         <a href="{% url 'lista_productos' %}" class="buy-btn2">Volver</a>
       </div>
     </div>
-
+    <!-- Fin fila 4 - botones -->
   </div>
+  <!-- Fin container -->
 </section>
+<!-- Fin Section -->
 {% endblock %}
